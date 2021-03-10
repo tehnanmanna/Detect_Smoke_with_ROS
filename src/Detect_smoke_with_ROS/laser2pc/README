@@ -1,0 +1,29 @@
+This package converts from laser scan vector to point cloud data
+
+benifts :
+we can apply point cloud data processing such as:
+1)Filtering
+2)Segmentation
+3)Clustering
+------------------------------
+to run use :
+rosrun laser2pc laser2pc.py
+------------------------------
+if it didn't work from the first time you need to make the python file executable:
+
+chmod +x laser2pc.py
+then use rosrun again to run it.
+-----------------------------------
+It publishes on a topic : laser_pointcloud
+rostopic list
+
+rostopic echo -n1 laser_pointcloud
+---------------------------------------------
+to compare with the laser vector use: 
+rostopic echo -n1 scan
+-----------------------------------------
+to visualize use
+rosrun rviz rviz
+
+then in the global frame use: base_laser
+and then add pointcloud2 and in topic > laser_pointcloud -Take a look on screenshot pc1-s

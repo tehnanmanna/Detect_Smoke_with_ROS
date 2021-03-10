@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<launch>
+    <arg name="test_case" default="test_case5"/>
+
+    <arg name="logger_conf_path" default="$(find youbot_sim_launcher)/test_cases/$(arg test_case)/config" />
+    <arg name="logger_results_path" default="$(find youbot_sim_launcher)/test_cases/$(arg test_case)/results" />
+    <arg name="handler_conf_path" default="$(find youbot_sim_launcher)/test_cases/$(arg test_case)/config" />
+    <arg name="testcase_files_path" default="$(find youbot_sim_launcher)/tests" />
+    <arg name="observer_conf_path" default="$(find youbot_sim_launcher)/test_cases/$(arg test_case)/config" />
+    <arg name="docker_tests" default="false"/>
+    
+
+
+    <node pkg="logger" type="data_logger.py" name="logger" output="screen" args="$(arg logger_conf_path) $(arg logger_results_path) $(arg docker_tests)"/>
+
+ 
+</launch>

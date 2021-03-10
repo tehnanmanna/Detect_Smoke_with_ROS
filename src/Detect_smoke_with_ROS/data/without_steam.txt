@@ -1,0 +1,19 @@
+PointCloud after filtering has: 259 data points.
+
+PointCloud representing the planar component: 259 data points.
+
+here in kd tree
+
+after extraction 6
+
+cluster=0 PointCloud representing the Cluster: 97 data points.
+
+cluster=1 PointCloud representing the Cluster: 90 data points.
+
+cluster=2 PointCloud representing the Cluster: 25 data points.
+
+cluster=3 PointCloud representing the Cluster: 25 data points.
+
+cluster=4 PointCloud representing the Cluster: 18 data points.
+
+cluster=5 PointCloud representing the Cluster: 3 data points.

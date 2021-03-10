@@ -1,0 +1,78 @@
+#Planner Parameters
+
+base_global_planner: luh_global_planner/GlobalPlanner
+base_local_planner: dwa_local_planner/DWAPlannerROS
+
+#<param name="global_planner/use_dijkstra" type="bool" value="false"/>
+
+#Rate Parameters
+
+controller_frequency: 10.0
+controller_patience: 5.0
+planner_frequency: 0.0
+planner_patience: 5.0
+
+
+clearing_radius: 0.6
+footprint_padding: 0.05
+
+#Costmap Parameters
+
+shutdown_costmaps: false
+
+#Recovery Parameters
+
+recovery_behaviors: [{name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery}, {name: rotate_recovery, type: rotate_recovery/RotateRecovery}, {name: aggressive_reset, type: clear_costmap_recovery/ClearCostmapRecovery}] 
+
+
+#[{name: MoveRecovery_BackA, type: luh_recovery/NoTurn},{name: MoveRecovery_Forward, type: luh_recovery/NoTurn},{name: MoveRecovery_BackB, type: luh_recovery/NoTurn},{name: MoveRecovery_BackLeftA, type: luh_recovery/NoTurn},{name: MoveRecovery_FrontRightA, type: luh_recovery/NoTurn},{name: MoveRecovery_Back_RightA, type: luh_recovery/NoTurn},{name: MoveRecovery_Front_LeftA, type: luh_recovery/NoTurn},{name: MoveRecovery_BackLeftB, type: luh_recovery/NoTurn},{name: MoveRecovery_FrontRightB, type: luh_recovery/NoTurn},{name: MoveRecovery_Back_RightB, type: luh_recovery/NoTurn},{name: MoveRecovery_Front_LeftB, type: luh_recovery/NoTurn}]
+
+
+
+recovery_behavior_enabled: false
+clearing_rotation_allowed: false
+conservative_reset_dist: 2.0
+
+oscillation_timeout: 10.0
+oscillation_distance: 50.0
+
+#MoveSlow:
+#   limited_trans_speed: 0.25
+#   limited_rot_speed: 0.45
+#   limited_distance: 0.3
+#   limited_lethal_inflation_radius: 0.0
+#   limited_inflation_radius: 0.0
+
+MoveRecovery_BackA:
+  distance_x: -0.15
+  distance_y: 0.00
+MoveRecovery_Forward:
+  distance_x: 0.3
+  distance_y: 0.00
+MoveRecovery_BackB:
+  distance_x: -0.1
+  distance_y: 0.00
+MoveRecovery_BackLeftA:
+  distance_x: -0.02
+  distance_y: 0.03
+MoveRecovery_FrontRightA:
+  distance_x: 0.04
+  distance_y: -0.06
+MoveRecovery_Back_RightA:
+  distance_x: -0.04
+  distance_y: 0.00
+MoveRecovery_Front_LeftA:
+  distance_x: 0.04
+  distance_y: 0.06
+MoveRecovery_BackLeftB:
+  distance_x: -0.06
+  distance_y: 0.00
+MoveRecovery_FrontRightB:
+  distance_x: 0.08
+  distance_y: -0.12
+MoveRecovery_Back_RightB:
+  distance_x: -0.08
+  distance_y: 0.00
+MoveRecovery_FrontLeftB:
+  distance_x: 0.04
+  distance_y: 0.12

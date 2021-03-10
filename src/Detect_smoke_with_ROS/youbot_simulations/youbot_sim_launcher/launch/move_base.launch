@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="output" default="screen"/>
+  <arg name="map_base_name" default="Testarena_100517"/>
+  <arg name="map_base_name_sim" default="map_leipzig1_simuliert"/>
+  <arg name="generate_costs" default="false"/>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="$(arg output)">
+    <param name="controller_frequency" type="double" value="10.0" />
+    <param name="planner_frequency" type="double" value="0.0" />
+    <param name="oscillation_timeout" type="double" value="10" />
+    <param name="heading_scoring" type="bool" value="true" />
+    <!--<param name="heading_scoring_timestep" type="double" value="0.1, 0, 1" />-->
+
+    <param name="base_local_planner" type="string" value="dwa_local_planner/DWAPlannerROS" />
+    <param name="base_global_planner" type="string" value="luh_global_planner/GlobalPlanner" />
+    <param name="use_dijkstra" type="bool" value="true"/>
+   <!-- <rosparam file="$(find luh_navigation_launcher)/config/move_base_params.yaml" command="load" ns="move_base" />-->
+    <rosparam file="$(find youbot_sim_launcher)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find youbot_sim_launcher)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find youbot_sim_launcher)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find youbot_sim_launcher)/config/global_costmap_params.yaml" command="load" />
+
+<!-- <rosparam file="$(find luh_navigation_launcher)/config/orientation_planner_params.yaml" command="load" />-->
+    <rosparam file="$(find youbot_sim_launcher)/config/dwa_local_planner_params.yaml" command="load" />
+    <!--remap from="/scan_filtered" to="/scan" />
+    <remap from="/scan_back_filtered" to="/scan_back" /-->
+    <remap from="odom" to="base_odometry/odom" if="$(arg generate_costs)"/>  
+  </node>
+</launch>

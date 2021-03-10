@@ -1,0 +1,50 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='particle_model'>
+        <link name='link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <gravity>0</gravity>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <lighting>0</lighting>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+          <transparency>0</transparency>
+          <cast_shadows>0</cast_shadows>
+        </visual>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+      </link>
+      <static>0</static>
+      <plugin name='particles' filename='libModelParticlePlugin.so'>
+      <particles>
+        <p_range>1.0</p_range>
+        <p_size>0.1</p_size>
+        <num_particles>100</num_particles>
+        <particle_update_time_>0.5</particle_update_time_>
+        <p_move_range>0.2</p_move_range>
+      </particles>
+      </plugin>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+  </model>
+</sdf>

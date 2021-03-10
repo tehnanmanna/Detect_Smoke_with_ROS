@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="logger_results_path" default="$(find youbot_sim_launcher)/test_cases/move_base_reaction_time/results" />
+
+  <node pkg="evaluator" type="evaluator.py" name="evaluator" output="screen" required="true" args="$(arg logger_results_path)"/>
+</launch>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<launch>
+    
+    <param name="/use_sim_time" value="true"/>
+
+    <arg name="test_case" default="navigation_test"/>
+    <arg name="handler_conf_path" default="$(find youbot_sim_launcher)/test_cases/$(arg test_case)/config" />
+    <arg name="logger_results_path" default="$(find youbot_sim_launcher)/test_cases/$(arg test_case)/results" />
+    <arg name="testcase_files_path" default="$(find youbot_sim_launcher)/tests" />
+    <arg name="docker_tests" default="false"/>
+    <arg name="wait_mode" default="false" />
+
+    <node pkg="youbot_sim_launcher" type="navigation_test_observer.py" name="nav_test_observer" required="true" output="screen"/>
+
+    <node pkg="handler" type="handler.py" name="handler" required="true" output="screen" args="$(arg testcase_files_path) $(arg handler_conf_path) $(arg wait_mode) $(arg logger_results_path)"/>
+
+
+    <!--node pkg="youbot_sim_launcher" type="base_bumper_counter.py" name="base_bumper_counter" output="screen"/-->
+
+</launch>
+
+

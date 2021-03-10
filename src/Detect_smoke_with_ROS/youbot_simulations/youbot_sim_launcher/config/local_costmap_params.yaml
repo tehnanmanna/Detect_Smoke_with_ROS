@@ -1,0 +1,57 @@
+## -----------------------------------------
+# All parameters at: wiki.ros.org/costmap_2d
+## -----------------------------------------
+
+## --------------------------------
+# Independet data for local costmap
+## --------------------------------
+
+local_costmap:
+    global_frame:     /odom
+    robot_base_frame: /base_footprint
+
+    update_frequency: 2.0
+
+    origin_x: -1.5
+    origin_y: -1.5
+    width: 3.0
+    height: 3.0
+    
+    static_map:       false
+    rolling_window:   true
+
+    track_unknown_space: false
+
+    inflation_layer:
+        lethal_inflation_radius:  0.025     # 
+        inscribed_radius:         0.36  # resolution (0.25) * sqrt(2) (for diagonal case)
+        inflation_radius:         0.42 #default = 0.35
+        cost_scaling_factor:     15.00 # increasing this value will decrease the costs
+        
+        # NOTE: if (distance < inflaction_radius):
+        #            cost = exp(-cost_scaling_factor * (distance - inscribed_radius)  * (MAX_COST - 1)
+        #       else:
+        #            cost = 0
+        # So, cost_scaling_factor is set, so that at the inflation_radius the exp-factor is close to 0
+        # here: exp(-12.00 * (0.40-0.0354)) ~= 1.3%
+
+    static_layer:
+        map_topic: map
+        lethal_cost_threshold: 100
+        unknown_cost_value: -1
+        use_map_data: false
+
+    plugins:
+     - 
+       name: obstacle_layer
+       type: "costmap_2d::ObstacleLayer" 
+     - 
+       name: inflation_layer
+       type: "costmap_2d::InflationLayer" 
+
+
+
+
+
+
+

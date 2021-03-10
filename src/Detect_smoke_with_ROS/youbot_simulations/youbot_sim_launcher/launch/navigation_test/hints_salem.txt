@@ -1,0 +1,128 @@
+initial pose:
+header: 
+  seq: 1
+  stamp: 
+    secs: 1250
+    nsecs: 549000000
+  frame_id: "map"
+pose: 
+    position: 
+      x: 0.408986091614
+      y: -0.49650323391
+      z: 0.0
+    orientation: 
+      x: 0.0
+      y: 0.0
+      z: -0.00753177437846
+      w: 0.999971635785
+
+  covariance: [0.05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.05, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.06853891945200942]
+
+header: 
+  seq: 2
+  stamp: 
+    secs: 266
+    nsecs: 950000000
+  frame_id: "map"
+pose: 
+  position: 
+    x: 0.799172401428
+    y: -4.39388561249
+    z: 0.0
+  orientation: 
+    x: 0.0
+    y: 0.0
+    z: -0.00848475730279
+    w: 0.999964003799
+---
+
+header: 
+  seq: 3
+  stamp: 
+    secs: 313
+    nsecs:   4000000
+  frame_id: "map"
+pose: 
+  position: 
+    x: 6.38606929779
+    y: -3.96783518791
+    z: 0.0
+  orientation: 
+    x: 0.0
+    y: 0.0
+    z: 0.732485237697
+    w: 0.680782914413
+---
+
+header: 
+  seq: 4
+  stamp: 
+    secs: 346
+    nsecs: 257000000
+  frame_id: "map"
+pose: 
+  position: 
+    x: 2.65811419487
+    y: -1.5519349575
+    z: 0.0
+  orientation: 
+    x: 0.0
+    y: 0.0
+    z: -0.71006930128
+    w: 0.704131796881
+---
+
+header: 
+  seq: 5
+  stamp: 
+    secs: 369
+    nsecs: 765000000
+  frame_id: "map"
+pose: 
+  position: 
+    x: 2.6501147747
+    y: -3.21629667282
+    z: 0.0
+  orientation: 
+    x: 0.0
+    y: 0.0
+    z: 0.710011517865
+    w: 0.704190062766
+---
+
+header: 
+  seq: 7
+  stamp: 
+    secs: 425
+    nsecs: 860000000
+  frame_id: "map"
+pose: 
+  position: 
+    x: 5.75875139236
+    y: -0.526520371437
+    z: 0.0
+  orientation: 
+    x: 0.0
+    y: 0.0
+    z: 0.999962520571
+    w: 0.00865779725578
+---
+
+header: 
+  seq: 8
+  stamp: 
+    secs: 460
+    nsecs: 824000000
+  frame_id: "map"
+pose: 
+  position: 
+    x: 1.41253685951
+    y: -0.512536406517
+    z: 0.0
+  orientation: 
+    x: 0.0
+    y: 0.0
+    z: 0.999996078215
+    w: 0.0028006347417
+---
+

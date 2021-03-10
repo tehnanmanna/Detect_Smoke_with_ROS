@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<launch>
+    <arg name="test_case" default="test_case5"/>
+
+    
+    <arg name="observer_conf_path" default="$(find youbot_sim_launcher)/test_cases/$(arg test_case)/config" />
+
+
+    <node pkg="observer" type="observer_node.py" name="observer" output="screen" args="$(arg observer_conf_path)"/>
+
+    <node pkg="youbot_sim_launcher" type="base_bumper_counter.py" name="base_bumper_counter" output="screen" />
+ 
+</launch>
+
+

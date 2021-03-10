@@ -1,0 +1,24 @@
+conditions:
+  '1':
+    id: 1
+    message: "x -3.83 y -3.11 z 0.0 x 0.0 y 0.0 z 1.0 w 0.0 header_time_stemp 4198021000000\
+      \   \n ///Forward Score: 0.0"
+    name: move_base_goal
+    status: 'True'
+    time: 19.875
+  '2':
+    id: 2
+    message: '### Observer ### Success Condition id: 2 of link: youbot::base_footprint'
+    name: Nav_to_Pose
+    status: 'True'
+    time: 17.806
+debug_count: 0
+message: 'Observer_Message: Calling start Command at Time 4196.973:All conditions
+  are true:'
+status: succeed
+test_case_file:
+  Objects: {}
+  gazebo_params: {}
+  ros_params:
+    /move_base/DWAPlannerROS/sim_time: 1.2571
+time: 19.95

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="output" default="screen"/>
+  <arg name="sim" default="false"/>
+  <arg name="gui" default="false"/>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="$(arg output)">
+    <param name="controller_frequency" type="double" value="10.0" />
+    <param name="planner_frequency" type="double" value="0.0" />
+    <param name="oscillation_timeout" type="double" value="10" />
+
+    <param name="base_local_planner" type="string" value="dwa_local_planner/DWAPlannerROS" />
+    <param name="base_global_planner" type="string" value="luh_global_planner/GlobalPlanner" />
+    <param name="global_planner/use_dijkstra" type="bool" value="true"/>
+
+    <rosparam file="$(find navigation_launcher)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find navigation_launcher)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find navigation_launcher)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find navigation_launcher)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find navigation_launcher)/config/dwa_local_planner.yaml" command="load" ns="DWAPlannerROS" />
+  </node>
+
+
+</launch>

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<launch>
+
+    <arg name="output" default="screen"/>
+    <arg name="sim" default="true"/>
+    <arg name="gui" default="false"/>
+
+    <param name="use_sim_time" value="true"/>
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" default="$(arg gui)"/>
+    <arg name="world_name" value="$(find youbot_sim_launcher)/launch/navigation_test/navigation_test.world"/>
+  </include>    
+    <!-- Not sure if the following param is necessary \('_')/ -->
+    <!-- send world urdf to param server -->
+	<!--param name="world_description" command="$(find xacro)/xacro.py $(find luh_youbot_gazebo)/worlds/layout_leipzig2_barrier_tape.world" /-->
+   <!--spawn uploaded world model -->
+	<!--node pkg="gazebo_ros" type="spawn_model" name="gazebo_world_model" args="-u -param world_description -model world -x 0.0 -y 0.0 -z 0.001" respawn="false" output="$(arg output)" /--> 
+  <!-- Convert an xacro and put on parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find luh_youbot_description)/robots/youbot_base.urdf.xacro" />
+  
+  <!--Dummy to convert package: to model: -->
+  <param name="dummy_to_generate_gazebo_urdf_file" command="rosrun xacro xacro.py -o /tmp/robot_base.gazebo.urdf $(find luh_youbot_description)/robots/youbot_base.urdf.xacro" />
+  <param name="dummy_to_convert_package_to_model" command="sed -i s@package://@model://@g /tmp/robot_base.gazebo.urdf" />
+  
+  <!-- Spawn a robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file /tmp/robot_base.gazebo.urdf -urdf -x 0.47 -y -0.49 -z 0.12 -model youbot" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="youbot_state_publisher" output="screen">
+    <remap from="joint_states" to="gazebo/joint_states"/>
+  </node>
+
+  <!--include file="$(find youbot_sim_launcher)/launch/gazebo_controller.launch"/-->
+
+
+</launch>

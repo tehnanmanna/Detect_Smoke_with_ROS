@@ -1,0 +1,25 @@
+conditions:
+  '1':
+    id: 1
+    message: "x -1.9 y -1.6 z 0.0 x 0.0 y 0.0 z 0.0 w 1.0 header_time_stemp 74305000000\
+      \ \nForward Score: 0.0"
+    name: move_base_finished
+    status: 'True'
+    time: 15.713540077209473
+  '2':
+    id: 2
+    message: ''
+    name: position_reached
+    status: 'True'
+    time: 14.414986848831177
+message: 'Observer_Message: Calling start Command at Time 1500314549.47:All conditions
+  are true:'
+status: succeed
+test_case_file:
+  Objects: {}
+  gazebo_params: {}
+  ros_params:
+    /move_base/DWAPlannerROS/vtheta_samples: 30
+    /move_base/DWAPlannerROS/vx_samples: 26
+    /move_base/DWAPlannerROS/vy_samples: 8
+time: 15.797192096710205

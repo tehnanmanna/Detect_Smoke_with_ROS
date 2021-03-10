@@ -1,0 +1,54 @@
+If a bag was not closed cleanly, then the index information may be corrupted. Two steps are needed to repair the bag:
+
+$ rosbag reindex *.bag.active
+
+$ rosbag fix *.bag.active repaired.bag 
+
+rosbag reindex is a command-line tool for repairing broken bag files (or bag files recorded prior to ROS version 0.11.) If a bag was not closed cleanly for any reason, then the index information may be corrupted. Use this tool to reread the message data and rebuild the index.
+
+A backup of each bag file (with the extension .orig.bag) is made before the bag is reindexed. If the backup file already exists (and the -f option isn't specified) then the tool will not reindex the file.
+
+    reindex <bag-files>
+        Reindex the given bag files.
+
+        $ rosbag reindex *.bag
+
+    -h, --help
+        Show the usage and exit.
+
+        $ rosbag reindex -h
+
+    --output-dir=DIR
+        Write to directory DIR.
+
+        $ rosbag reindex --output-dir=reindexed *.bag
+
+    -f, --force
+        Force overwriting of backup file it it exists.
+
+        $ rosbag reindex -f *.bag
+
+    -q, --quiet
+        Suppress noncritical messages.
+
+        $ rosbag reindex -q *.bag
+        
+
+
+fix <in-bag> <out-bag> [rules.bmr]
+
+    Repairs a bag using registered rules (and optionally locally defined rules).
+
+    $ rosbag fix old.bag repaired.bag myrules.bmr
+
+-h, --help
+
+    Show the usage and exit.
+
+    $ rosbag fix -h
+
+-n, --noplugins
+
+    Do not load rule files via plugins.
+
+    $ rosbag fix -n old.bag repaired.bag

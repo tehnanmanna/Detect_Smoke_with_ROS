@@ -1,0 +1,42 @@
+conditions:
+  '1':
+    id: 1
+    message: '### Observer ### Success Condition id: 1 of link: robot_description::base_link'
+    name: position_1
+    status: 'True'
+    time: 38.111
+  '2':
+    id: 2
+    message: '### Observer ### Success Condition id: 2 of link: robot_description::base_link'
+    name: position_2
+    status: 'True'
+    time: 52.701
+  '3':
+    id: 3
+    message: '### Observer ### Success Condition id: 3 of link: robot_description::base_link'
+    name: position_3
+    status: 'True'
+    time: 80.241
+  '4':
+    id: 4
+    message: ''
+    name: cmd_vel_pub_reaction_time
+    status: 'True'
+    time: 0.986
+  '5':
+    id: 5
+    message: "  Start_Time: 6767833000000\n  1_Goal_Sended: 6767992000000\n  Finished_Time:\
+      \ 6847840000000\n  Start-1_Goal-Duration: 0.159\n  MoveBase_Duration: 79.848\n\
+      \ Status: Succeded"
+    name: move_base_finished
+    status: 'True'
+    time: 80.723
+debug_count: 0
+message: 'Observer_Message: Calling start Command at Time 6767.091:All conditions
+  are true:'
+status: succeed
+test_case_file:
+  Objects: {}
+  gazebo_params: {}
+  ros_params: {}
+time: 81.57

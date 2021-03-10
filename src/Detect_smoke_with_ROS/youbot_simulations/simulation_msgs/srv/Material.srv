@@ -1,0 +1,7 @@
+string name
+float32 reflectivity
+float32 transmission
+float32 absorption
+float32 angular_factor
+---
+

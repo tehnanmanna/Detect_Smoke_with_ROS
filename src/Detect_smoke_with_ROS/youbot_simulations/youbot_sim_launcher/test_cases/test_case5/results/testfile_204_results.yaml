@@ -1,0 +1,23 @@
+conditions:
+  '1':
+    id: 1
+    message: ''
+    name: move_base_goal
+    status: 'False'
+    time: 0.0
+  '2':
+    id: 2
+    message: '### Observer ### Success Condition id: 2 of link: youbot::base_footprint'
+    name: Nav_to_Pose
+    status: 'True'
+    time: 55.81
+debug_count: 0
+message: 'Observer_Message: Calling start Command at Time 11701.265:Max time is over
+  max_time 70.0'
+status: Timeout
+test_case_file:
+  Objects: {}
+  gazebo_params: {}
+  ros_params:
+    /move_base/DWAPlannerROS/sim_time: 3.0143
+time: 70.002

@@ -1,0 +1,13 @@
+http://wiki.ros.org/Robots/Husky (general wiki/tutorials)
+
+clone this repo: https://github.com/husky/husky
+
+sudo apt-get install ros-melodic-lms1xx
+
+sudo apt install ros-melodic-robot-localization
+
+sudo apt install ros-melodic-interactive-marker-twist-server
+
+sudo apt install ros-melodic-twist-mux ros-melodic-twist-mux-msgs
+
+

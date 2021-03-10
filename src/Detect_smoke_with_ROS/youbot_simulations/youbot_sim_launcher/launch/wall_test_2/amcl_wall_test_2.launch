@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+        <arg name="map_file" default="$(find youbot_sim_launcher)/map/map_wall_test_2.yaml"/>
+        <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen">
+            <param name="frame_id" value="map"/>
+        </node>
+
+    <!--- Run AMCL -->
+    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+
+        <rosparam file="$(find youbot_sim_launcher)/config/amcl_params.yaml" command="load" />
+    </node>
+
+
+</launch>

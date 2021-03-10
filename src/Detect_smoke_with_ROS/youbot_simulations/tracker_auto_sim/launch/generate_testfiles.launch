@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="generator_conf_path" value="$(find tracker_auto_sim)/test_cases/tracker_navigation/config" />
+  <arg name="generator_safe_path" value="$(find tracker_auto_sim)/tests" />
+
+  <node pkg="generator" type="generator.py" name="generator" output="screen" args="$(arg generator_conf_path) $(arg generator_safe_path)"/>
+
+</launch>
+
+

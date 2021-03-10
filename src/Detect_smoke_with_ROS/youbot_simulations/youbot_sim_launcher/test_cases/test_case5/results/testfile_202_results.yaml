@@ -1,0 +1,23 @@
+conditions:
+  '1':
+    id: 1
+    message: ''
+    name: move_base_goal
+    status: 'False'
+    time: 0.0
+  '2':
+    id: 2
+    message: ''
+    name: Nav_to_Pose
+    status: 'False'
+    time: 0.0
+debug_count: 0
+message: 'Observer_Message: Calling start Command at Time 11500.978:Max time is over
+  max_time 70.0'
+status: Timeout
+test_case_file:
+  Objects: {}
+  gazebo_params: {}
+  ros_params:
+    /move_base/DWAPlannerROS/sim_time: 2.9857
+time: 70.002

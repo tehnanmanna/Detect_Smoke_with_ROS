@@ -1,0 +1,13 @@
+GlobalPlanner:
+
+    planning_backwards_allowed: true
+    apply_smoothing:            true
+
+    # costs
+    forward_no_turn_cost:   1
+    forward_and_turn_cost:  10
+    turn_in_place_cost:     100
+    heading_deviation_cost: 50
+    cell_cost_factor:       1.0
+    
+    cost_threshold:         0.5

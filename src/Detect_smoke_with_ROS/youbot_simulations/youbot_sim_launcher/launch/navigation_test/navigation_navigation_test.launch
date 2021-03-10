@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="amcl_scan_remapper" pkg="imes_navigation" type="amcl_scan_remapper">
+    </node>
+
+        <arg name="map_file" default="$(find youbot_sim_launcher)/launch/navigation_test/nav_test1.yaml"/>
+        <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen">
+            <param name="frame_id" value="/map"/>
+        </node>
+
+    <!--- Run AMCL -->
+    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+        <rosparam file="$(find youbot_sim_launcher)/config/amcl_params.yaml" command="load" />
+        <remap from="/scan" to="/scan_combined"/>
+    </node>
+
+    <!--include file="$(find youbot_sim_launcher)/launch/move_base.launch"/-->
+
+</launch>

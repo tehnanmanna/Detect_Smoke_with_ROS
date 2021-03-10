@@ -1,0 +1,10 @@
+float32 mean_range
+int16 num_particle
+float32 particle_size
+float32 move_range
+float32 particle_update_time
+float32 horizontal_angle_min
+float32 horizontal_angle_max
+float32 transparency
+---
+bool success

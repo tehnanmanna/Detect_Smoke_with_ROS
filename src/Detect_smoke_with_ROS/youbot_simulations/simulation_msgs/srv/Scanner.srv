@@ -1,0 +1,10 @@
+float32 refl_scale
+float32 angular_scale_std
+float32 angular_scale_mean
+float32 max_absorb_mean
+float32 max_absorb_stddev
+float32 range_scale_fac
+float32 trans_scale_mean
+float32 trans_scale_stddev
+---
+

@@ -1,0 +1,3 @@
+/home/alex/wentz_catkin_ws/src/youbot_simulation/test_plugin/build/CMakeFiles/rebuild_cache.dir
+/home/alex/wentz_catkin_ws/src/youbot_simulation/test_plugin/build/CMakeFiles/edit_cache.dir
+/home/alex/wentz_catkin_ws/src/youbot_simulation/test_plugin/build/CMakeFiles/model_push.dir

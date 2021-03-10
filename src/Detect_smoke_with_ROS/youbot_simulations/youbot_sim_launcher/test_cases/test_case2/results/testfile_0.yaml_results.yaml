@@ -1,0 +1,26 @@
+conditions:
+  '1':
+    id: 1
+    message: "x -1.9 y -1.6 z 0.0 x 0.0 y 0.0 z -0.695 w 0.712 header_time_stemp 72679000000\
+      \   \n ///Forward Score: -97.0"
+    name: move_base_goal
+    status: 'True'
+    time: 32.08280396461487
+  '2':
+    id: 2
+    message: ''
+    name: Nav_to_Pose
+    status: 'False'
+    time: 0.0
+message: 'Observer_Message: Calling start Command at Time 1504100729.89:Max time is
+  over max_time 60.0'
+status: Timeout
+test_case_file:
+  Objects: {}
+  gazebo_params: {}
+  ros_params:
+    /move_base/DWAPlannerROS/sim_time: 0.1
+    /move_base/DWAPlannerROS/vtheta_samples: 15
+    /move_base/DWAPlannerROS/vx_samples: 9
+    /move_base/DWAPlannerROS/vy_samples: 3
+time: 60.0508348941803

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="generator_conf_path" value="$(find youbot_sim_launcher)/test_cases/navigation_test/config" />
+  <arg name="generator_safe_path" value="$(find youbot_sim_launcher)/tests" />
+
+  <node pkg="generator" type="generator.py" name="generator" output="screen" args="$(arg generator_conf_path) $(arg generator_safe_path)"/>
+</launch>
+
+
